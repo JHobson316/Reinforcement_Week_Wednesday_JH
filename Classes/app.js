@@ -103,9 +103,9 @@ const main = () => {
     }
   }
 
-  let Ifi = new People("Ifi",243,72);
-  console.log(Ifi);
-  console.log(Ifi.bmi());
+  let Ify = new People("Ify",243,72);
+  console.log(Ify);
+  console.log(Ify.bmi());
   // EXAMPLE OUTPUT: BMI is (weight / (height * height)) x 703. Weight is in pounds and height is in inches.
 
 
