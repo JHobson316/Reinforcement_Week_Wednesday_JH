@@ -136,28 +136,41 @@ const main = () => {
     super(firstName, lastName, age, interests);
     this.subject = subject;
     this.students = [];
-    let studentArray = this.students;
-    addStudent(){
-      studentArray.push(student);
+    }
+    addStudent(Student){
+      this.students.push(Student);
+    }
+    // Create a method called listAllStudents that prints every student name and student cohort associated with a teacher.
+    listAllStudents(array){
+      for (let i = 0; i< array.length; i++){
+        console.log(`Student: ${array[i].firstName}, Cohort: ${array[i].cohort}`);
+      }
     }
   }
 
-
-  // Create a method called listAllStudents that prints every student name and student cohort associated with a teacher.
-
   // Create an instance of the Teacher class called teacher1 with an empty student array.
+  let teacher1 = new Teacher("John","Johnson","43","Knitting and biking", "Latin");
 
   //  Create another instance of this class called teacher2 with an empty student array.
+  let teacher2 = new Teacher("Hannah","Harrison","38","Netflix and kickboxing", "Math");
 
   //   Add two students to teacher1 using the class method.
+  let Jessica = new Student("Jessica","Hampton","17","Softball","Andrew");
+  let Andrew = new Student("Andrew","Lee","17","Video Games","Jessica");
 
   //   Add two students to teacher2 using the class method.
+  let Brian = new Student("Brian","Murphy","14","Soccer","Maria");
+  let Maria = new Student("Maria","Rodriguez","15","Shopping","Brian");
 
   //   List all students associated with teacher1 using the class method.
-
+  teacher1.addStudent(Jessica);
+  teacher1.addStudent(Andrew);
   //   List all studnets associated with teacher2 using the class method.
+  teacher2.addStudent(Brian);
+  teacher2.addStudent(Maria);
 
-
+  teacher1.listAllStudents(teacher1.students);
+  teacher2.listAllStudents(teacher2.students);
 };
 
 main();
